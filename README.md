@@ -1,5 +1,5 @@
-Grape API on Rack w/ Versioning Fallback
-========================================
+Grape API w/ Versioning Fallback
+================================
 
 [![Build Status](https://secure.travis-ci.org/dblock/grape-on-rack-v1-inside-v2.png)](http://travis-ci.org/dblock/grape-on-rack-v1-inside-v2)
 
