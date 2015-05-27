@@ -12,5 +12,9 @@ module Acme
     get "ping" do
       { ping: "pong" }
     end
+
+    get "foo" do
+      { bar: "bar" }
+    end
   end
 end
