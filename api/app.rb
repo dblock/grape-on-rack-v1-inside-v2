@@ -1,7 +1,9 @@
+require 'v2'
+require 'v1'
+
 module Acme
-  class App < Rack::Cascade
-    def initialize
-      super [ Acme::V2, Acme::V1 ]
-    end
+  class App < Grape::API
+    mount ::Acme::V2
+    mount ::Acme::V1
   end
 end
