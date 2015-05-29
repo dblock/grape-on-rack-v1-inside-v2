@@ -1,7 +1,7 @@
 module Acme
   class V1 < Grape::API
     format :json
-    version %w(v2 v1), using: :header, vendor: 'acme', format: :json, cascade: true
+    version %w(v2 v1), using: :header, vendor: 'acme', format: :json
 
     desc 'Returns the current API version, v1.'
     get do
