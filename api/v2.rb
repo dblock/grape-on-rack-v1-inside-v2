@@ -8,7 +8,15 @@ module Acme
       { version: 'v2' }
     end
 
-    get 'foo' do
+    get 'only_in_v2' do
+      { only_in_v2: true }
+    end
+
+    get 'in_both_v1_and_v2' do
+      { in_both_v1_and_v2: 'v2' }
+    end
+
+    get 'found_in_v1_but_not_found_in_v2' do
       error!('404 Not Found', 404)
     end
   end

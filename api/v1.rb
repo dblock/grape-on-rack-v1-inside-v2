@@ -8,13 +8,16 @@ module Acme
       { version: 'v1' }
     end
 
-    desc 'Returns pong.'
-    get 'ping' do
-      { ping: 'pong' }
+    get 'only_in_v1' do
+      { only_in_v1: true }
     end
 
-    get 'foo' do
-      { bar: 'bar' }
+    get 'in_both_v1_and_v2' do
+      { in_both_v1_and_v2: 'v1' }
+    end
+
+    get 'found_in_v1_but_not_found_in_v2' do
+      { found_in_v1_but_not_found_in_v2: true }
     end
   end
 end

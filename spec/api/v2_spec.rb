@@ -13,13 +13,27 @@ describe Acme::App do
       expect(last_response.status).to eq(200)
       expect(last_response.body).to eq({ version: 'v2' }.to_json)
     end
-    it 'ping returns v1 pong' do
-      get '/ping', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v2+json'
+    it 'only_in_v1 returns from v1' do
+      get '/only_in_v1', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v2+json'
       expect(last_response.status).to eq(200)
-      expect(last_response.body).to eq({ ping: 'pong' }.to_json)
+      expect(last_response.body).to eq({ only_in_v1: true }.to_json)
     end
-    it 'foo returns a 404' do
-      get '/foo', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v2+json'
+    it 'only_in_v2 returns from v2' do
+      get '/only_in_v2', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v2+json'
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to eq({ only_in_v2: true }.to_json)
+    end
+    it 'in_both_v1_and_v2 returns from v2' do
+      get '/in_both_v1_and_v2', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v2+json'
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to eq({ in_both_v1_and_v2: 'v2' }.to_json)
+    end
+    it 'found_in_v1_but_not_found_in_v2 returns from v2' do
+      get '/found_in_v1_but_not_found_in_v2', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v2+json'
+      expect(last_response.status).to eq(404)
+    end
+    it 'not_found returns a 404' do
+      get '/not_found'
       expect(last_response.status).to eq(404)
     end
   end
