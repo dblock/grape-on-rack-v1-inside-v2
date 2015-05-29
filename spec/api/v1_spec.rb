@@ -18,6 +18,11 @@ describe Acme::App do
       last_response.status.should == 200
       last_response.body.should == { ping: "pong" }.to_json
     end
+    it "foo returns bar" do
+      get "/foo", nil, { "HTTP_ACCEPT" => "application/vnd.acme-v1+json" }
+      last_response.status.should == 200
+      last_response.body.should == { bar: "bar" }.to_json
+    end
   end
 
 end

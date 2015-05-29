@@ -7,5 +7,9 @@ module Acme
     get do
       { version: 'v2' }
     end
+
+    get "foo" do
+      error!('404 Not Found', 404)
+    end
   end
 end

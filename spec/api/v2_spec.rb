@@ -18,6 +18,10 @@ describe Acme::App do
       last_response.status.should == 200
       last_response.body.should == { ping: "pong" }.to_json
     end
+    it "foo returns a 404" do
+      get "/foo", nil, { "HTTP_ACCEPT" => "application/vnd.acme-v2+json" }
+      last_response.status.should == 404
+    end
   end
 
 end
