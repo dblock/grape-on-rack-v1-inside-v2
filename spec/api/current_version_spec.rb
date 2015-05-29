@@ -4,7 +4,7 @@ describe Acme::App do
   include Rack::Test::Methods
 
   def app
-    Acme::App.new
+    Acme::App
   end
 
   context 'current' do

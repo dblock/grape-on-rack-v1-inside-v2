@@ -4,7 +4,7 @@ describe Acme::App do
   include Rack::Test::Methods
 
   def app
-    Acme::App.new
+    Acme::App
   end
 
   context 'v1' do
@@ -18,7 +18,7 @@ describe Acme::App do
       expect(last_response.status).to eq(200)
       expect(last_response.body).to eq({ only_in_v1: true }.to_json)
     end
-    pending 'only_in_v2 returns not found' do
+    it 'only_in_v2 returns not found' do
       get '/only_in_v2', nil, 'HTTP_ACCEPT' => 'application/vnd.acme-v1+json'
       expect(last_response.status).to eq(404)
     end
