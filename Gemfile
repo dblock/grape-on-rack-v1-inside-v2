@@ -1,15 +1,15 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
-gem "rack", "~> 1.5.2"
-gem "grape", github: 'intridea/grape'
-gem "json", "~> 1.7.7"
+gem 'rack'
+gem 'grape'
+gem 'json'
 
 group :development do
-  gem "rake", "~> 10.0.3"
+  gem 'rake', '~> 10.0.3'
+  gem 'rubocop'
 end
 
 group :test do
-  gem "rspec", "~> 2.13.0"
-  gem "rack-test", "~> 0.6.2"
+  gem 'rspec'
+  gem 'rack-test'
 end
-

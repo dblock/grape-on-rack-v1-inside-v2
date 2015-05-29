@@ -3,12 +3,12 @@ module Acme
     format :json
     version 'v2', using: :header, vendor: 'acme', format: :json, cascade: true
 
-    desc "Returns the current API version, v2."
+    desc 'Returns the current API version, v2.'
     get do
       { version: 'v2' }
     end
 
-    get "foo" do
+    get 'foo' do
       error!('404 Not Found', 404)
     end
   end

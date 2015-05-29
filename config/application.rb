@@ -9,5 +9,4 @@ Dir[File.expand_path('../../api/*.rb', __FILE__)].each do |f|
   require f
 end
 
-require "app"
-
+require 'app'
