@@ -3,7 +3,7 @@ Grape API w/ Versioning Fallback
 
 [![Build Status](https://secure.travis-ci.org/dblock/grape-on-rack-v1-inside-v2.png)](http://travis-ci.org/dblock/grape-on-rack-v1-inside-v2)
 
-A [Grape](http://github.com/intridea/grape) API mounted on Rack with two versions where `v2` builds incrementally on top of `v1`. In this example the `only_in_v1` method is only implemented on version `v1`, while the root method is implemented on both versions.
+A [Grape](http://github.com/intridea/grape) API mounted on Rack with two versions where `v2` builds incrementally on top of `v1`. In this example the `only_in_v1` method is only implemented on version `v1`, the root method is implemented on both versions, etc.
 
 Run
 ---
